@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "photo-gallery-vue",
   "integrations": {
     "capacitor": {}
   },
