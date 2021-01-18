@@ -1,18 +1,19 @@
 <template>
   <ion-app>
-    <ion-router-outlet />
+    <chart-view />
   </ion-app>
 </template>
 
 <script lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
+import { IonApp } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import ChartView from './views/ChartView.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     IonApp,
-    IonRouterOutlet
+    ChartView
   }
 });
 </script>

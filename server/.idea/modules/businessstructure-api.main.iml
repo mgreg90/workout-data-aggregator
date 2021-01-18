@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: com.ultimatesoftware.lore:lore-all:0.8.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.ultimatesoftware.lore:lore-identity-jose:0.8.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.ultimatesoftware:ulti-surge-engine-ks-command-javadsl_2.12:0.4.90" level="project" />
+    <orderEntry type="library" name="Gradle: com.ultimatesoftware:ulti-surge-engine-ks-query-javadsl_2.12:0.4.90" level="project" />
+    <orderEntry type="library" name="Gradle: com.ultimatesoftware:surge-mp-domain-helpers-kotlin_2.12:0.4.90" level="project" />
+    <orderEntry type="library" name="Gradle: org.liquibase:liquibase-core:4.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.scala-lang:scala-library:2.12.10" level="project" />
+  </component>
+</module>

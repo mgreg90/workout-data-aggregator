@@ -23,3 +23,9 @@ npm run serve
 
 #### Deploy the Android App
 Follow [this guide from the Ionic Framework documentation](https://ionicframework.com/docs/developing/android)
+
+After making significant changes, you'll need to reload the android code.
+To do so, run:
+```sh
+ionic capacitor copy android
+```

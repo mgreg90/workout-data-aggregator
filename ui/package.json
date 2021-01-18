@@ -16,6 +16,7 @@
     "@ionic/pwa-elements": "^3.0.1",
     "@ionic/vue": "^0.5.2",
     "@ionic/vue-router": "^0.5.2",
+    "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.1"
@@ -40,5 +41,5 @@
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
   },
-  "description": "Build a photo gallery app that runs on iOS, Android, and the web - with just one codebase."
+  "description": "App that integrates fitness data from various sources into charts!"
 }
