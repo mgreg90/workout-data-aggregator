@@ -11,6 +11,7 @@ dependencies {
   implementation "io.github.cdimascio:dotenv-kotlin:6.2.2"
   implementation "org.slf4j:slf4j-simple:1.7.30"
   implementation "org.litote.kmongo:kmongo:4.2.3"
+  implementation "org.litote.kmongo:kmongo-id-jackson:4.2.3"
   implementation "com.github.kittinunf.fuel:fuel:2.3.1"
   implementation "com.github.kittinunf.fuel:fuel-jackson:2.3.1"
 }
