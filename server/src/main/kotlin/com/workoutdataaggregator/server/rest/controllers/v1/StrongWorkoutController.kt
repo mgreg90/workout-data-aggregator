@@ -19,7 +19,7 @@ class StrongWorkoutController(val strongService: StrongService): IController {
         val body = ctx.body<StrongWorkoutReadDto>()
 
         when (val fetchWorkoutsResult = strongService.fetchWorkouts(body.startDate, body.endDate)) {
-            is Either.Error -> fetchWorkoutsResult.error
+            is Either.Problem -> fetchWorkoutsResult.problem
             is Either.Value -> ctx.json(fetchWorkoutsResult.value)
         }
     }

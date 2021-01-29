@@ -15,7 +15,7 @@ class PersonModel(
 
         class Factory : BaseModel.Factory<PersonDao>() {
             fun fromCreateDto(createDto : PersonCreateDto) = PersonModel(
-                name = createDto.name,
+                name = createDto.name!!,
                 age = createDto.age
             )
 

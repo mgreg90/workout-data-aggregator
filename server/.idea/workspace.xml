@@ -5,68 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a672bc08-8396-4911-8a12-cbf23aeb7422" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/daos/BaseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/daos/IDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/daos/PersonDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/BaseModel$Factory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/BaseModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/IModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/PersonModel$Factory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/PersonModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/repositories/BaseRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/repositories/IRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/repositories/PersonRepository$Companion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/repositories/PersonRepository$idField$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/repositories/PersonRepository$registerIndexes$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/repositories/PersonRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/repositories/Repositories.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$sam$io_javalin_http_Handler$0.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/dtos/PersonUpdateDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/dtos/UuidDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/services/PersonService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab.keystream" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab.keystream.len" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab.len" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab.values.at" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab_i" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab_i.len" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/BaseDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/IDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/PersonDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/PersonModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/IRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/PersonRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/Repositories.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonUpdateDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/UuidDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/PersonService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/BaseController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/BaseDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/Problem.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/extensions/Context.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/extensions/String.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/kotlin/com.workoutdataaggregator.server/utils/ProblemTests.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/MongoDb$init$mike$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/MongoDb.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/MongoDb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/TestModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/Controllers.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/Controllers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/services/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/services/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/META-INF/server.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/META-INF/server.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient$fetchWorkouts$request$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient$fetchWorkouts$request$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient$login$request$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient$login$request$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/clients/StrongClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/PersonModel$Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/persistence/models/PersonModel$Factory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController$routes$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/StrongWorkoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/controllers/v1/StrongWorkoutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/services/PersonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/services/PersonService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/services/StrongService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/services/StrongService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/utils/Either$Error.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/utils/Either$Value.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/utils/Either$Value.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/utils/Either.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/workoutdataaggregator/server/utils/Either.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
@@ -84,10 +60,10 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/inline-functions.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
@@ -96,6 +72,12 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
@@ -144,14 +126,14 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/MongoDb.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/MongoDb.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/BaseModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/BaseModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/TestModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/IModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/BaseRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/BaseRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/Controllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/Controllers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/Services.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/Services.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/StrongClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/StrongClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/PersonModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/PersonModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/StrongWorkoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/StrongWorkoutController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/PersonService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/PersonService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/StrongService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/StrongService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/Either.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/Either.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,9 +179,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Interface" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
-        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -225,6 +207,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
