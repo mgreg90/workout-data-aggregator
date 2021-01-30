@@ -4,7 +4,6 @@ import com.workoutdataaggregator.server.rest.controllers.BaseController
 import com.workoutdataaggregator.server.rest.controllers.IController
 import com.workoutdataaggregator.server.rest.dtos.PersonCreateDto
 import com.workoutdataaggregator.server.rest.dtos.PersonCreateDtoValidator
-//import com.workoutdataaggregator.server.rest.dtos.PersonCreateDtoValidator
 import com.workoutdataaggregator.server.rest.dtos.PersonUpdateDto
 import com.workoutdataaggregator.server.rest.dtos.UnvalidatedPersonCreateDto
 import com.workoutdataaggregator.server.services.PersonService
@@ -71,12 +70,19 @@ class PersonController(private val personService: PersonService): BaseController
 
             val validationResult = PersonCreateDtoValidator(result!!).validate<PersonCreateDto>()
 
+            val personCreateDto : PersonCreateDto
             when(validationResult) {
-                is Either.Problem -> ctx.json(validationResult.problem)
-                is Either.Value -> {
-                    val person = personService.create(validationResult.value)
-                    ctx.json(person)
+                is Either.Problem -> {
+                    validationResult.problem.renderJson(ctx)
+                    return@controllerAction
                 }
+                is Either.Value -> personCreateDto = validationResult.value
+            }
+
+            val creationResult = personService.create(personCreateDto)
+            when (creationResult) {
+                is Either.Problem -> creationResult.problem.renderJson(ctx)
+                is Either.Value -> ctx.json(creationResult.value)
             }
         }
     }

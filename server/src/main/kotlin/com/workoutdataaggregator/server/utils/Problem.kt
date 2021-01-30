@@ -60,6 +60,11 @@ object Problems {
         statusCode = 500
     )
 
+    fun DATABASE_ERROR() = Problem(
+        type = ProblemType.SERVICE_UNAVAILABLE,
+        statusCode = 503
+    )
+
     open class Problem(
         @JsonIgnore val type : ProblemType,
         val message : String,
@@ -109,6 +114,11 @@ object Problems {
         INTERNAL_SERVER_ERROR(
             "internal-server-error",
             "Internal server error"
+        ),
+
+        SERVICE_UNAVAILABLE(
+            "service-unavailable",
+            "Service is temporarily unavailable"
         );
 
         val typeString = "workout-data-aggregator.errors.$_typeString"

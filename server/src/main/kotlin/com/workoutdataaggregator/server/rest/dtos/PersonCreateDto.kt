@@ -1,22 +1,16 @@
 package com.workoutdataaggregator.server.rest.dtos
 
-import com.workoutdataaggregator.server.utils.Either
-import com.workoutdataaggregator.server.utils.Problems
-import io.javalin.http.Context
-import org.jetbrains.annotations.NotNull
-import java.lang.Exception
-
 class PersonCreateDto(val name : String, val age : Int) : DtoBase()
 
 class UnvalidatedPersonCreateDto(val name: String?, val age : Int?) : UnvalidatedDtoBase() {
-    override fun toDto(): IDtoBase = PersonCreateDto(
+    override fun toDto(): IDto = PersonCreateDto(
         name = name!!,
         age = age!!
     )
 }
 
 class PersonCreateDtoValidator(unvalidatedDto : UnvalidatedPersonCreateDto) : DtoValidatorBase(unvalidatedDto) {
-    override val rules: List<Rule<IUnvalidatedDtoBase<IDtoBase>>> = listOf(
+    override val rules: List<Rule<IUnvalidatedDto<IDto>>> = listOf(
         Rule(
             logic = { unvalidatedDto.age != null && unvalidatedDto.age > 0 },
             field = "age",

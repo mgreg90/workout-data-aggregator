@@ -10,7 +10,7 @@ import com.workoutdataaggregator.server.utils.Problems.Problem
 import com.workoutdataaggregator.server.utils.Problems
 import java.util.*
 
-class PersonService(private val repository : PersonRepository) {
+class PersonService(private val repository : PersonRepository) : ServiceBase() {
 
     fun findOne(id: UUID) : Either<Problem, IModel> {
         val person = repository.findById(id)
@@ -19,7 +19,12 @@ class PersonService(private val repository : PersonRepository) {
     }
 
     fun findAll() = repository.findAll()
-    fun create(personDto: PersonCreateDto) = repository.createOne(PersonModel.Factory().fromCreateDto(personDto))
+    fun create(personDto: PersonCreateDto) : Either<Problem, IModel> {
+        val createdPerson = repository.createOne(PersonModel.Factory().fromCreateDto(personDto))
+        if (createdPerson != null) return Either.Value(createdPerson)
+
+        return Either.Problem(Problems.DATABASE_ERROR())
+    }
     fun update(personDto: PersonUpdateDto) = repository.updateOne(PersonModel.Factory().fromUpdateDto(personDto))
     fun destroy(id: UUID) = repository.deleteOne(id)
 }

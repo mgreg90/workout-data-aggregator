@@ -14,36 +14,36 @@ class Rule<T>(val logic : (T) -> Boolean, val field : String?, val message : Str
     }
 }
 
-abstract class DtoValidatorBase(val unvalidatedDtoBase : IUnvalidatedDtoBase<IDtoBase>) : IDtoValidatorBase {
-    override fun <T : IDtoBase> validate(): Either<Problems.Problem, T> {
+abstract class DtoValidatorBase(val unvalidatedDto : IUnvalidatedDto<IDto>) : IDtoValidator {
+    override fun <T : IDto> validate(): Either<Problems.Problem, T> {
         val results : MutableList<ValidationResult> = mutableListOf()
 
         rules.forEach { rule ->
-            val result = rule.evaluate(unvalidatedDtoBase)
+            val result = rule.evaluate(unvalidatedDto)
             if (result != null) results.add(result)
         }
 
         return if (results.any())
             Either.Problem(Problems.VALIDATION_ERROR(results))
         else
-            Either.Value(unvalidatedDtoBase.toDto() as T)
+            Either.Value(unvalidatedDto.toDto() as T)
     }
 }
 
-abstract class UnvalidatedDtoBase() : IUnvalidatedDtoBase<IDtoBase>
+abstract class UnvalidatedDtoBase : IUnvalidatedDto<IDto>
 
-abstract class DtoBase : IDtoBase
+abstract class DtoBase : IDto
 
-interface IDtoValidatorBase {
-    val rules : List<Rule<IUnvalidatedDtoBase<IDtoBase>>>
-    fun <T : IDtoBase> validate() : Either<Problems.Problem, IDtoBase>
+interface IDtoValidator {
+    val rules : List<Rule<IUnvalidatedDto<IDto>>>
+    fun <T : IDto> validate() : Either<Problems.Problem, IDto>
 }
 
-interface IUnvalidatedDtoBase<T : IDtoBase> {
+interface IUnvalidatedDto<T : IDto> {
     fun toDto() : T
 }
 
-interface IDtoBase
+interface IDto
 
 
 //import com.workoutdataaggregator.server.utils.Either
