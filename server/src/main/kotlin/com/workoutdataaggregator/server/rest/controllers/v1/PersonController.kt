@@ -2,10 +2,7 @@ package com.workoutdataaggregator.server.rest.controllers.v1
 
 import com.workoutdataaggregator.server.rest.controllers.BaseController
 import com.workoutdataaggregator.server.rest.controllers.IController
-import com.workoutdataaggregator.server.rest.dtos.PersonCreateDto
-import com.workoutdataaggregator.server.rest.dtos.PersonCreateDtoValidator
-import com.workoutdataaggregator.server.rest.dtos.PersonUpdateDto
-import com.workoutdataaggregator.server.rest.dtos.UnvalidatedPersonCreateDto
+import com.workoutdataaggregator.server.rest.dtos.*
 import com.workoutdataaggregator.server.services.PersonService
 import com.workoutdataaggregator.server.utils.Either
 import com.workoutdataaggregator.server.utils.Problems
@@ -55,20 +52,21 @@ class PersonController(private val personService: PersonService): BaseController
 
     private fun create(ctx: Context) {
         controllerAction(ctx) {
-            var result : UnvalidatedPersonCreateDto? = null
-            try {
-                result = ctx.body<UnvalidatedPersonCreateDto>()
-            } catch (e : Exception) {
-                var message = if (e.message?.startsWith("Couldn't deserialize") == true)
-                    "Unable to parse request body"
-                else
-                    e.localizedMessage
-
-                Problems.VALIDATION_ERROR(message).renderJson(ctx)
-                return@controllerAction
-            }
-
-            val validationResult = PersonCreateDtoValidator(result!!).validate<PersonCreateDto>()
+//            var result : UnvalidatedPersonCreateDto? = null
+//            try {
+//                result = ctx.body<UnvalidatedPersonCreateDto>()
+//            } catch (e : Exception) {
+//                var message = if (e.message?.startsWith("Couldn't deserialize") == true)
+//                    "Unable to parse request body"
+//                else
+//                    e.localizedMessage
+//
+//                Problems.VALIDATION_ERROR(message).renderJson(ctx)
+//                return@controllerAction
+//            }
+//
+//            val validationResult = PersonCreateDtoValidator(result!!).validate<PersonCreateDto>()
+            val validationResult = PersonCreateDtoParser().parse(ctx)
 
             val personCreateDto : PersonCreateDto
             when(validationResult) {
@@ -76,7 +74,7 @@ class PersonController(private val personService: PersonService): BaseController
                     validationResult.problem.renderJson(ctx)
                     return@controllerAction
                 }
-                is Either.Value -> personCreateDto = validationResult.value
+                is Either.Value -> personCreateDto = validationResult.value as PersonCreateDto
             }
 
             val creationResult = personService.create(personCreateDto)

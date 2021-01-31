@@ -2,49 +2,61 @@ package com.workoutdataaggregator.server.rest.dtos
 
 import com.workoutdataaggregator.server.utils.Either
 import com.workoutdataaggregator.server.utils.Problems
-
-class ValidationResults(val results : List<ValidationResult>)
-
-class ValidationResult(val field : String?, val message : String)
-
-class Rule<T>(val logic : (T) -> Boolean, val field : String?, val message : String) {
-    fun evaluate(input: T) : ValidationResult? {
-        if (!logic(input)) return ValidationResult(field, message)
-        return null
-    }
-}
-
-abstract class DtoValidatorBase(val unvalidatedDto : IUnvalidatedDto<IDto>) : IDtoValidator {
-    override fun <T : IDto> validate(): Either<Problems.Problem, T> {
-        val results : MutableList<ValidationResult> = mutableListOf()
-
-        rules.forEach { rule ->
-            val result = rule.evaluate(unvalidatedDto)
-            if (result != null) results.add(result)
-        }
-
-        return if (results.any())
-            Either.Problem(Problems.VALIDATION_ERROR(results))
-        else
-            Either.Value(unvalidatedDto.toDto() as T)
-    }
-}
-
-abstract class UnvalidatedDtoBase : IUnvalidatedDto<IDto>
-
-abstract class DtoBase : IDto
-
-interface IDtoValidator {
-    val rules : List<Rule<IUnvalidatedDto<IDto>>>
-    fun <T : IDto> validate() : Either<Problems.Problem, IDto>
-}
-
-interface IUnvalidatedDto<T : IDto> {
-    fun toDto() : T
-}
+import io.javalin.http.Context
 
 interface IDto
 
+interface IRawDto {
+    fun validate() : Either<Problems.Problem, IRawDto>
+}
+
+interface IDtoParser {
+    fun parse(ctx : Context) : Either<Problems.Problem, IDto>
+}
+
+class ValidationResult(val field : String?, val message : String)
+
+//class ValidationResults(val results : List<ValidationResult>)
+//
+//
+//class Rule<T>(val logic : (T) -> Boolean, val field : String?, val message : String) {
+//    fun evaluate(input: T) : ValidationResult? {
+//        if (!logic(input)) return ValidationResult(field, message)
+//        return null
+//    }
+//}
+//
+//abstract class DtoValidatorBase(val unvalidatedDto : IUnvalidatedDto<IDto>) : IDtoValidator {
+//    override fun <T : IDto> validate(): Either<Problems.Problem, T> {
+//        val results : MutableList<ValidationResult> = mutableListOf()
+//
+//        rules.forEach { rule ->
+//            val result = rule.evaluate(unvalidatedDto)
+//            if (result != null) results.add(result)
+//        }
+//
+//        return if (results.any())
+//            Either.Problem(Problems.VALIDATION_ERROR(results))
+//        else
+//            Either.Value(unvalidatedDto.toDto() as T)
+//    }
+//}
+//
+//abstract class UnvalidatedDtoBase : IUnvalidatedDto<IDto>
+//
+//abstract class DtoBase : IDto
+//
+//interface IDtoValidator {
+//    val rules : List<Rule<IUnvalidatedDto<IDto>>>
+//    fun <T : IDto> validate() : Either<Problems.Problem, IDto>
+//}
+//
+//interface IUnvalidatedDto<T : IDto> {
+//    fun toDto() : T
+//}
+//
+//interface IDto
+//
 
 //import com.workoutdataaggregator.server.utils.Either
 //import com.workoutdataaggregator.server.utils.Problems
