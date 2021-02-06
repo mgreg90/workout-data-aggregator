@@ -9,7 +9,7 @@ import com.workoutdataaggregator.server.utils.Problems
 import com.workoutdataaggregator.server.utils.extensions.*
 import io.javalin.apibuilder.ApiBuilder.*
 import io.javalin.http.Context
-import java.util.UUID.fromString
+import java.util.*
 
 class PersonController(private val personService: PersonService): BaseController(), IController {
     override fun routes() {
@@ -53,13 +53,12 @@ class PersonController(private val personService: PersonService): BaseController
         controllerAction(ctx) {
             val validationResult = PersonCreateDtoParser().parse(ctx)
 
-            val personCreateDto : PersonCreateDto
-            when(validationResult) {
+            val personCreateDto = when(validationResult) {
                 is Either.Problem -> {
                     validationResult.problem.renderJson(ctx)
                     return@controllerAction
                 }
-                is Either.Value -> personCreateDto = validationResult.value as PersonCreateDto
+                is Either.Value -> validationResult.value as PersonCreateDto
             }
 
             when (val creationResult = personService.create(personCreateDto)) {
@@ -71,12 +70,9 @@ class PersonController(private val personService: PersonService): BaseController
 
     private fun update(ctx: Context) {
         controllerAction(ctx) {
-            val validationResult = PersonUpdateDtoParser().parse(ctx)
-
-            val personUpdateDto : PersonUpdateDto
-            when (validationResult) {
+            val personUpdateDto = when (val validationResult = PersonUpdateDtoParser().parse(ctx)) {
                 is Either.Problem -> validationResult.problem.renderJson(ctx).let { return@controllerAction }
-                is Either.Value -> personUpdateDto = validationResult.value
+                is Either.Value -> validationResult.value
             }
 
             when (val creationResult = personService.update(personUpdateDto)) {
@@ -88,12 +84,18 @@ class PersonController(private val personService: PersonService): BaseController
 
     private fun destroy(ctx: Context) {
         controllerAction(ctx) {
-            val id = fromString(ctx.pathParam("id"))
+            val id = when(val parseResult = ctx.parsePathId()) {
+                is Either.Problem -> {
+                    parseResult.problem.renderJson(ctx)
+                    return@controllerAction
+                }
+                is Either.Value -> parseResult.value
+            }
+
             when(val deleteResult = personService.destroy(id)) {
                 is Either.Problem -> deleteResult.problem.renderJson(ctx)
                 is Either.Value -> ctx.status(204)
             }
-            ctx.status(204)
         }
     }
 }
