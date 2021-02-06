@@ -52,20 +52,6 @@ class PersonController(private val personService: PersonService): BaseController
 
     private fun create(ctx: Context) {
         controllerAction(ctx) {
-//            var result : UnvalidatedPersonCreateDto? = null
-//            try {
-//                result = ctx.body<UnvalidatedPersonCreateDto>()
-//            } catch (e : Exception) {
-//                var message = if (e.message?.startsWith("Couldn't deserialize") == true)
-//                    "Unable to parse request body"
-//                else
-//                    e.localizedMessage
-//
-//                Problems.VALIDATION_ERROR(message).renderJson(ctx)
-//                return@controllerAction
-//            }
-//
-//            val validationResult = PersonCreateDtoValidator(result!!).validate<PersonCreateDto>()
             val validationResult = PersonCreateDtoParser().parse(ctx)
 
             val personCreateDto : PersonCreateDto
@@ -77,8 +63,7 @@ class PersonController(private val personService: PersonService): BaseController
                 is Either.Value -> personCreateDto = validationResult.value as PersonCreateDto
             }
 
-            val creationResult = personService.create(personCreateDto)
-            when (creationResult) {
+            when (val creationResult = personService.create(personCreateDto)) {
                 is Either.Problem -> creationResult.problem.renderJson(ctx)
                 is Either.Value -> ctx.json(creationResult.value)
             }
