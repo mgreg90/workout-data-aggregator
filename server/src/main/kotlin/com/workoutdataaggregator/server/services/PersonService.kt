@@ -19,18 +19,21 @@ class PersonService(private val repository : PersonRepository) : ServiceBase() {
     }
 
     fun findAll() = repository.findAll()
+
     fun create(personDto: PersonCreateDto) : Either<Problem, IModel> {
         val createdPerson = repository.createOne(PersonModel.Factory().fromCreateDto(personDto))
         if (createdPerson != null) return Either.Value(createdPerson)
 
         return Either.Problem(Problems.DATABASE_ERROR())
     }
+
     fun update(personDto: PersonUpdateDto) : Either<Problem, IModel> {
         val updatedPerson = repository.updateOne(PersonModel.Factory().fromUpdateDto(personDto))
         if (updatedPerson != null) return Either.Value(updatedPerson)
 
         return Either.Problem(Problems.DATABASE_ERROR())
     }
+
     fun destroy(id: UUID) : Either<Problem, UUID> {
         val isDeleted = repository.deleteOne(id).deletedCount > 0
         if (isDeleted) return Either.Value(id)

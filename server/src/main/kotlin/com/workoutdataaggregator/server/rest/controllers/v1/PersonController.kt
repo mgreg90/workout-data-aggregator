@@ -26,13 +26,12 @@ class PersonController(private val personService: PersonService): BaseController
 
     private fun read(ctx: Context) {
         controllerAction(ctx) {
-            val rawId = ctx.pathParam("id")
-            val id = rawId.toUUIDSafe()
-
-            if (id == null) {
-                logger.error("Could not parse id - '$rawId'")
-                Problems.VALIDATION_ERROR("Could not parse id").renderJson(ctx)
-                return@controllerAction
+            val id = when(val parseResult = ctx.parsePathId()) {
+                is Either.Problem -> {
+                    parseResult.problem.renderJson(ctx)
+                    return@controllerAction
+                }
+                is Either.Value -> parseResult.value
             }
 
             when (val result = personService.findOne(id)) {
@@ -51,9 +50,7 @@ class PersonController(private val personService: PersonService): BaseController
 
     private fun create(ctx: Context) {
         controllerAction(ctx) {
-            val validationResult = PersonCreateDtoParser().parse(ctx)
-
-            val personCreateDto = when(validationResult) {
+            val personCreateDto = when(val validationResult = PersonCreateDtoParser().parse(ctx)) {
                 is Either.Problem -> {
                     validationResult.problem.renderJson(ctx)
                     return@controllerAction
