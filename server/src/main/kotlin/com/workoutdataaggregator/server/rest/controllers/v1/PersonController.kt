@@ -35,7 +35,7 @@ class PersonController(private val personService: PersonService): BaseController
             }
 
             when (val result = personService.findOne(id)) {
-                is Either.Problem -> ctx.json(result.problem)
+                is Either.Problem -> result.problem.renderJson(ctx)
                 is Either.Value -> ctx.json(result.value)
             }
         }
