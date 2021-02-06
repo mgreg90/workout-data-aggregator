@@ -3,9 +3,6 @@ package com.workoutdataaggregator.server.persistence.models
 import com.workoutdataaggregator.server.persistence.daos.PersonDao
 import com.workoutdataaggregator.server.rest.dtos.PersonCreateDto
 import com.workoutdataaggregator.server.rest.dtos.PersonUpdateDto
-import org.bson.codecs.pojo.annotations.BsonId
-import org.litote.kmongo.Id
-import org.litote.kmongo.newId
 import java.util.*
 
 class PersonModel(
@@ -15,7 +12,7 @@ class PersonModel(
 
         class Factory : BaseModel.Factory<PersonDao>() {
             fun fromCreateDto(createDto : PersonCreateDto) = PersonModel(
-                name = createDto.name!!,
+                name = createDto.name,
                 age = createDto.age
             )
 

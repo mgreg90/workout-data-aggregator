@@ -36,7 +36,5 @@ abstract class BaseRepository<TModel : BaseModel<TDao>, TDao : BaseDao> : IRepos
         return dao.toModel()
     }
 
-    fun deleteOne(id: UUID) {
-        collection.deleteOne(idField eq id.toString())
-    }
+    fun deleteOne(id: UUID) = collection.deleteOne(idField eq id.toString())
 }

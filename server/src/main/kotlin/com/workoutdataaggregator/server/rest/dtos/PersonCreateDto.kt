@@ -1,7 +1,5 @@
 package com.workoutdataaggregator.server.rest.dtos
 
-import com.workoutdataaggregator.server.utils.Either
-import com.workoutdataaggregator.server.utils.Problems
 import io.javalin.http.Context
 import org.valiktor.Validator
 import org.valiktor.functions.isGreaterThan
@@ -22,5 +20,5 @@ class RawPersonCreateDto(val name : String?, val age : Int?) : IRawDto {
 }
 
 class PersonCreateDtoParser() : DtoParserBase() {
-    fun parse(ctx : Context) : Either<Problems.Problem, IDto> = _parse(ctx, ::PersonCreateDto)
+    fun parse(ctx : Context) = _parse(ctx, ::PersonCreateDto)
 }

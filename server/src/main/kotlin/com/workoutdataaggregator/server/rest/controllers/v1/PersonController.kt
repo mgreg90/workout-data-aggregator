@@ -9,7 +9,6 @@ import com.workoutdataaggregator.server.utils.Problems
 import com.workoutdataaggregator.server.utils.extensions.*
 import io.javalin.apibuilder.ApiBuilder.*
 import io.javalin.http.Context
-import java.lang.Exception
 import java.util.UUID.fromString
 
 class PersonController(private val personService: PersonService): BaseController(), IController {
@@ -72,16 +71,28 @@ class PersonController(private val personService: PersonService): BaseController
 
     private fun update(ctx: Context) {
         controllerAction(ctx) {
-            val body = ctx.body<PersonUpdateDto>()
-            val person = personService.update(body)
-            ctx.json(person)
+            val validationResult = PersonUpdateDtoParser().parse(ctx)
+
+            val personUpdateDto : PersonUpdateDto
+            when (validationResult) {
+                is Either.Problem -> validationResult.problem.renderJson(ctx).let { return@controllerAction }
+                is Either.Value -> personUpdateDto = validationResult.value
+            }
+
+            when (val creationResult = personService.update(personUpdateDto)) {
+                is Either.Problem -> creationResult.problem.renderJson(ctx)
+                is Either.Value -> ctx.json(creationResult.value)
+            }
         }
     }
 
     private fun destroy(ctx: Context) {
         controllerAction(ctx) {
             val id = fromString(ctx.pathParam("id"))
-            personService.destroy(id)
+            when(val deleteResult = personService.destroy(id)) {
+                is Either.Problem -> deleteResult.problem.renderJson(ctx)
+                is Either.Value -> ctx.status(204)
+            }
             ctx.status(204)
         }
     }

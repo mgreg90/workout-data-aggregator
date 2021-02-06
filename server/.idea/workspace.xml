@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a672bc08-8396-4911-8a12-cbf23aeb7422" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/PersonModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/PersonModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/BaseRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/BaseRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/PersonController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/BaseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/BaseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonCreateDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonUpdateDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/PersonUpdateDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/PersonService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/PersonService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/extensions/Context.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/extensions/Context.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

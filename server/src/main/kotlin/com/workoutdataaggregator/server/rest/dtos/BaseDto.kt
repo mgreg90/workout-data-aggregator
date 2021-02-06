@@ -27,11 +27,10 @@ interface IRawDto {
         }
     }
 
-    fun validations(x : Validator<IRawDto>)
+    fun validations(validator : Validator<IRawDto>)
 }
 
-interface IDtoParser {
-}
+interface IDtoParser
 
 abstract class DtoParserBase : IDtoParser {
     inline fun <TDto : IDto, reified TRawDto : IRawDto> _parse(ctx : Context, factory : (TRawDto) -> TDto) : Either<Problems.Problem, TDto> {
