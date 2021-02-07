@@ -5,9 +5,9 @@ import com.github.kittinunf.fuel.core.*
 import com.github.kittinunf.fuel.jackson.objectBody
 import com.github.kittinunf.fuel.jackson.responseObject
 import com.workoutdataaggregator.server.EnvVars
-import com.workoutdataaggregator.server.clients.responsedtos.StrongFetchWorkoutsRequestBodyDto
+import com.workoutdataaggregator.server.clients.requestdtos.StrongFetchWorkoutsRequestBodyDto
 import com.workoutdataaggregator.server.clients.responsedtos.StrongFetchWorkoutsResponseBodyDto
-import com.workoutdataaggregator.server.clients.responsedtos.StrongLoginRequestBodyDto
+import com.workoutdataaggregator.server.clients.requestdtos.StrongLoginRequestBodyDto
 import com.workoutdataaggregator.server.clients.responsedtos.StrongLoginResponseBodyDto
 import com.workoutdataaggregator.server.utils.Either
 import com.workoutdataaggregator.server.utils.HttpResult
@@ -23,7 +23,7 @@ class StrongClient: BaseClient() {
     fun isLoggedIn() = userId != null || sessionToken != null
 
     fun login(): Either<Problem, Nothing?> {
-        print("Logging into Strong App... ")
+        logger.debug("Logging into Strong App... ")
         val loginUrl = "${EnvVars.strongAppBaseUrl}/parse/login"
         var result : Either<Problem, Nothing?> = Either.Value(null)
 
@@ -34,13 +34,13 @@ class StrongClient: BaseClient() {
                 override fun success(request: Request, response: Response, value: StrongLoginResponseBodyDto) {
                     userId = value.objectId
                     sessionToken = value.sessionToken
-                    println("Complete!")
+                    logger.debug("Complete!")
                 }
 
                 override fun failure(request: Request, response: Response, error: FuelError) {
                     val httpResult = HttpResult.ServiceUnavailable("Login to Strong Api Failed! - ${error.message}")
                     result = Either.Problem(Problems.AUTHORIZATION_ERROR("Login to Strong Api Failed! - ${error.message}"))
-                    println("Failed! - ${error.message}")
+                    logger.debug("Failed! - ${error.message}")
                 }
             })
 
@@ -50,7 +50,7 @@ class StrongClient: BaseClient() {
 
     fun fetchWorkouts(startDate: Date, endDate: Date) : Either<Problem, StrongFetchWorkoutsResponseBodyDto> {
         if (!isLoggedIn()) throw Exception("Cannot fetchWorkouts unless logged in!")
-        print("Fetching Workouts from Strong App... ")
+        logger.debug("Fetching Workouts from Strong App... ")
         val workoutsUrl = "${EnvVars.strongAppBaseUrl}/parse/classes/ParseWorkout"
         var result : Either<Problem, StrongFetchWorkoutsResponseBodyDto>? = null
 
@@ -61,12 +61,12 @@ class StrongClient: BaseClient() {
             .responseObject(object: ResponseHandler<StrongFetchWorkoutsResponseBodyDto> {
                 override fun success(request: Request, response: Response, value: StrongFetchWorkoutsResponseBodyDto) {
                     result = Either.Value(value)
-                    println("Complete!")
+                    logger.debug("Complete!")
                 }
 
                 override fun failure(request: Request, response: Response, error: FuelError) {
                     result = Either.Problem(Problems.CLIENT_NETWORK_ERROR("Fetching Workouts from Strong Api Failed! - ${error.message}"))
-                    println("Failed! - ${error.message}")
+                    logger.debug("Failed! - ${error.message}")
                 }
             })
 

@@ -5,7 +5,6 @@ import com.workoutdataaggregator.server.rest.controllers.IController
 import com.workoutdataaggregator.server.rest.dtos.*
 import com.workoutdataaggregator.server.services.PersonService
 import com.workoutdataaggregator.server.utils.Either
-import com.workoutdataaggregator.server.utils.Problems
 import com.workoutdataaggregator.server.utils.extensions.*
 import io.javalin.apibuilder.ApiBuilder.*
 import io.javalin.http.Context

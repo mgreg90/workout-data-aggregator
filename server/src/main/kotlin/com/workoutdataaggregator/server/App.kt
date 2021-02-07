@@ -7,8 +7,10 @@ import com.workoutdataaggregator.server.rest.Routes
 import com.workoutdataaggregator.server.rest.controllers.Controllers
 import com.workoutdataaggregator.server.services.Services
 import io.javalin.Javalin
+import org.slf4j.LoggerFactory
 
 class App {
+    private val logger = LoggerFactory.getLogger(javaClass)
     lateinit var app: Javalin
     lateinit var controllers: Controllers
 
@@ -28,26 +30,26 @@ class App {
     }
 
     private fun readEnvVars() {
-        print("Reading Env Vars... ")
+        logger.debug("Reading Env Vars... ")
         EnvVars.init()
-        println("Complete!")
+        logger.debug("Reading Env Vars Complete!")
     }
 
     private fun registerRoutes() {
-        print("Registering Routes... ")
+        logger.debug("Registering Routes... ")
         Routes(controllers).register(app)
-        println("Complete!")
+        logger.debug("Registering Routes Complete!")
     }
 
     private fun connectToDb() {
-        print("Creating Database Connection... ")
+        logger.debug("Creating Database Connection... ")
         MongoDb.init()
-        println("Complete!")
+        logger.debug("Creating Database Connection Complete!")
     }
 
     private fun startServer() {
-        println("Starting server on port ${EnvVars.port}... ")
+        logger.debug("Starting server on port ${EnvVars.port}... ")
         app.start(EnvVars.port)
-        println("Server is live! 🚀")
+        logger.debug("Server is live on port ${EnvVars.port}! 🚀")
     }
 }
