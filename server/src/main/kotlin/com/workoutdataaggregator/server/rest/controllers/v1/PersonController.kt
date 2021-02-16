@@ -4,13 +4,17 @@ import com.workoutdataaggregator.server.rest.controllers.BaseController
 import com.workoutdataaggregator.server.rest.controllers.IController
 import com.workoutdataaggregator.server.rest.dtos.*
 import com.workoutdataaggregator.server.services.PersonService
+import com.workoutdataaggregator.server.services.StrongService
 import com.workoutdataaggregator.server.utils.Either
 import com.workoutdataaggregator.server.utils.extensions.*
 import io.javalin.apibuilder.ApiBuilder.*
 import io.javalin.http.Context
 import java.util.*
 
-class PersonController(private val personService: PersonService): BaseController(), IController {
+class PersonController(
+    private val personService : PersonService,
+    private val strongService : StrongService
+    ): BaseController(), IController {
     override fun routes() {
         path("/v1/person/:id") {
             get(::read)
