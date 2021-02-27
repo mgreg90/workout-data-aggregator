@@ -8,17 +8,19 @@ object Exceptions {
     }
     class ClientException(override val message : String, val type: Types): Exception(message)
 
-    class MissingEnvVarException(missingEnvVars : List<String>) : Exception(msg(missingEnvVars)) {
+    class EnvVarException(invalidEnvVars : List<String> = listOf(), missingEnvVars: List<String> = listOf()) : Exception(msg(invalidEnvVars, missingEnvVars)) {
         companion object {
-            fun msg(missingEnvVars : List<String>) =
-                "Missing Environment Variables: ${missingEnvVars.joinToString(", ")}"
-        }
-    }
+            fun msg(invalidEnvVars : List<String>, missingEnvVars : List<String>) : String {
+                val missingMsg = "Missing Environment Variables: ${missingEnvVars.joinToString(", ")}"
+                val invalidMsg = "Unable to Parse Environment Variables: ${invalidEnvVars.joinToString(", ")}"
 
-    class InvalidEnvVarException(missingEnvVars : List<String>) : Exception(msg(missingEnvVars)) {
-        companion object {
-            fun msg(invalidEnvVars : List<String>) =
-                "Unable to Parse Environment Variables: ${invalidEnvVars.joinToString(", ")}"
+                return when {
+                    missingEnvVars.any() && invalidEnvVars.any() -> "$missingMsg\n$invalidMsg"
+                    missingEnvVars.any() -> missingMsg
+                    invalidEnvVars.any() -> invalidMsg
+                    else -> "Exception reading environment variables."
+                }
+            }
         }
     }
 }

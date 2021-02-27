@@ -11,7 +11,7 @@ class Controllers(private val services: Services) {
     fun init(): Controllers {
         val exerciseController = ExerciseController(services.exerciseService)
         val healthCheckController = HealthCheckController()
-        val personController = PersonController(services.personService)
+        val personController = PersonController(services.personService, services.strongService)
         val strongWorkoutController = StrongWorkoutController(services.strongService)
 
         all = listOf(

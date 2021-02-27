@@ -39,17 +39,10 @@ class EnvVarReader() {
     fun readStr(varName : String) = read(varName) ?: ""
 
     fun validate() {
-        when {
-            missingEnvVars.any() -> {
-                throw Exceptions.MissingEnvVarException(missingEnvVars)
-            }
-            invalidEnvVars.any() -> {
-                throw Exceptions.InvalidEnvVarException(invalidEnvVars)
-            }
-            else -> {
-                logger.info("Env Vars read successfully!")
-            }
-        }
+        if (missingEnvVars.any() || invalidEnvVars.any())
+            throw Exceptions.EnvVarException(missingEnvVars = missingEnvVars, invalidEnvVars = invalidEnvVars)
+        else
+            logger.info("Env Vars read successfully!")
     }
 
     private fun read(varName : String) : String? {
