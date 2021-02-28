@@ -1,13 +1,19 @@
 package com.workoutdataaggregator.server.persistence.repositories
 
 object Repositories {
-    var all = mutableListOf<IRepository>()
+    var all = listOf<IRepository>()
+
     lateinit var personRepository: PersonRepository
+    lateinit var exerciseRepository: ExerciseRepository
 
     fun init(): Repositories {
         personRepository = PersonRepository()
+        exerciseRepository = ExerciseRepository()
 
-        all.add(personRepository)
+        all = listOf(
+                personRepository,
+                exerciseRepository
+        )
 
         return this
     }

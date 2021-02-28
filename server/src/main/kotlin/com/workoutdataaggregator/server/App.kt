@@ -3,7 +3,6 @@ package com.workoutdataaggregator.server
 import com.workoutdataaggregator.server.clients.Clients
 import com.workoutdataaggregator.server.persistence.MongoDb
 import com.workoutdataaggregator.server.persistence.repositories.Repositories
-import com.workoutdataaggregator.server.rest.Routes
 import com.workoutdataaggregator.server.rest.controllers.Controllers
 import com.workoutdataaggregator.server.services.Services
 import io.javalin.Javalin
@@ -30,26 +29,28 @@ class App {
     }
 
     private fun readEnvVars() {
-        logger.debug("Reading Env Vars... ")
+        logger.info("Reading Env Vars... ")
         EnvVars.init()
-        logger.debug("Reading Env Vars Complete!")
-    }
-
-    private fun registerRoutes() {
-        logger.debug("Registering Routes... ")
-        Routes(controllers).register(app)
-        logger.debug("Registering Routes Complete!")
+        logger.info("Reading Env Vars Complete!")
     }
 
     private fun connectToDb() {
-        logger.debug("Creating Database Connection... ")
+        logger.info("Creating Database Connection... ")
         MongoDb.init()
-        logger.debug("Creating Database Connection Complete!")
+        logger.info("Creating Database Connection Complete!")
+    }
+
+    private fun registerRoutes() {
+        logger.info("Registering Routes... ")
+        controllers.registerRoutes(app)
+        logger.info("Registering Routes Complete!")
     }
 
     private fun startServer() {
-        logger.debug("Starting server on port ${EnvVars.port}... ")
-        app.start(EnvVars.port)
-        logger.debug("Server is live on port ${EnvVars.port}! 🚀")
+        val port = EnvVars.port()
+
+        logger.info("Starting server on port ${port}... ")
+        app.start(port)
+        logger.info("Server is live on port ${port}! 🚀")
     }
 }

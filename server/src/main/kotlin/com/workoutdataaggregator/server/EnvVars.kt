@@ -5,11 +5,12 @@ import org.slf4j.LoggerFactory
 import java.lang.NumberFormatException
 
 object EnvVars {
-    var port : Int = 0
-    lateinit var strongAppBaseUrl : String
-    lateinit var strongAppUsername : String
-    lateinit var strongAppPassword : String
-    lateinit var strongAppApplicationId : String
+    private var isInitialized = false
+    private var port : Int = 0
+    private lateinit var strongAppBaseUrl : String
+    private lateinit var strongAppUsername : String
+    private lateinit var strongAppPassword : String
+    private lateinit var strongAppApplicationId : String
 
     fun init() {
         val envReader = EnvVarReader()
@@ -20,6 +21,18 @@ object EnvVars {
         strongAppApplicationId = envReader.readStr("STRONG_APP_APPLICATION_ID")
 
         envReader.validate()
+        isInitialized = true
+    }
+
+    fun port() = get(port)
+    fun strongAppBaseUrl() = get(strongAppBaseUrl)
+    fun strongAppUsername() = get(strongAppUsername)
+    fun strongAppPassword() = get(strongAppPassword)
+    fun strongAppApplicationId() = get(strongAppApplicationId)
+
+    private fun <T : Any>get(variable : T) : T {
+        if (!isInitialized) throw Exceptions.InitializationException(javaClass, "EnvVars are not yet initialized!")
+        return variable
     }
 }
 
@@ -41,8 +54,6 @@ class EnvVarReader() {
     fun validate() {
         if (missingEnvVars.any() || invalidEnvVars.any())
             throw Exceptions.EnvVarException(missingEnvVars = missingEnvVars, invalidEnvVars = invalidEnvVars)
-        else
-            logger.info("Env Vars read successfully!")
     }
 
     private fun read(varName : String) : String? {

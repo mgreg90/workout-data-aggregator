@@ -60,9 +60,16 @@ object Problems {
         statusCode = 500
     )
 
-    fun DATABASE_ERROR() = Problem(
+    fun DATABASE_UNAVAILABLE_ERROR() = Problem(
         type = ProblemType.SERVICE_UNAVAILABLE,
         statusCode = 503
+    )
+
+
+    fun DATABASE_ACTION_FAILED_ERROR(message : String) = Problem(
+            type = ProblemType.INTERNAL_SERVER_ERROR,
+            message = message,
+            statusCode = 500
     )
 
     open class Problem(

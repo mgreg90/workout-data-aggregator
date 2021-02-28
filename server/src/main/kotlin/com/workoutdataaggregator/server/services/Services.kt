@@ -9,7 +9,7 @@ class Services(private val clients: Clients, private val repositories: Repositor
     lateinit var exerciseService : ExerciseService
 
     fun init(): Services {
-        strongService = StrongService(clients.strongClient)
+        strongService = StrongService(clients.strongClient, repositories.exerciseRepository)
         personService = PersonService(repositories.personRepository)
         exerciseService = ExerciseService()
         return this

@@ -1,10 +1,15 @@
 package com.workoutdataaggregator.server.clients.responsedtos
 
+import com.workoutdataaggregator.server.persistence.models.ExerciseModel
+import com.workoutdataaggregator.server.persistence.models.ExerciseSetModel
+import java.time.Instant
 import java.util.*
 
 data class StrongFetchWorkoutsResponseBodyDto(
     val results : List<StrongFetchWorkoutsResponseBodyResultDto>
-)
+) {
+    fun toExerciseModelList() : List<ExerciseModel> = ExerciseModel.Factory().listFromDto(this)
+}
 
 data class StrongFetchWorkoutsResponseBodyResultDto(
     val objectId : String,
@@ -19,7 +24,9 @@ data class StrongFetchWorkoutsResponseBodyResultDto(
     val updatedAt : Date
 )
 
-data class StrongWorkoutDateDto(val iso: Date)
+data class StrongWorkoutDateDto(val iso: String) {
+    fun toInstant(): Instant = Instant.parse(iso)
+}
 
 data class StrongWorkoutUserDto(val objectId: String)
 
@@ -30,8 +37,21 @@ data class StrongWorkoutSetGroupDto(
     val startDate: StrongWorkoutDateDto?,
     val superSetOrder: Int?,
     val notes: String,
-    val parseExercise: StrongWorkoutExerciseDto
-)
+    val parseExercise: StrongWorkoutExerciseDto,
+    val uniqueId: UUID
+) {
+    fun toExerciseModel() = ExerciseModel.Factory().fromDto(this)
+
+    fun estimatedExecutionTimeFor(strongWorkoutSetDictionary: StrongWorkoutSetDictionary): Instant {
+        val length = completionDate!!.toInstant().epochSecond - startDate!!.toInstant().epochSecond
+        val index = parseSetsDictionary.indexOf(strongWorkoutSetDictionary)
+        val portion = (length / parseSetsDictionary.size - 1) * index
+
+        return startDate.toInstant().plusSeconds(portion)
+    }
+
+    fun isInvalid() = completionDate == null || startDate == null
+}
 
 data class StrongWorkoutSetDictionary(
     val isPersonalRecord : Boolean,
@@ -43,7 +63,9 @@ data class StrongWorkoutSetDictionary(
     val personalRecords: String?,
     val kilograms: Float?,
     val expectedKilograms: Float?
-)
+) {
+    fun toExerciseSetModel(workoutId : UUID, estimatedExecutionTime : Instant) = ExerciseSetModel.Factory().fromDto(this, workoutId, estimatedExecutionTime)
+}
 
 data class StrongWorkoutExerciseDto(
     val objectId: String,
