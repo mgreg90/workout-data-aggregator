@@ -29,3 +29,21 @@ To do so, run:
 ```sh
 ionic capacitor copy android
 ```
+
+### Server Development
+
+#### MongoDB
+To install (on Mac):
+```sh
+brew install mongodb-community@4.4
+```
+
+To start:
+```sh
+brew services start mongodb-community
+```
+
+To stop:
+```sh
+brew services stop mongodb-community
+```

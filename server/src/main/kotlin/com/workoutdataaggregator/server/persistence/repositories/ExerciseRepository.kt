@@ -2,7 +2,10 @@ package com.workoutdataaggregator.server.persistence.repositories
 
 import com.workoutdataaggregator.server.persistence.MongoDb
 import com.workoutdataaggregator.server.persistence.daos.ExerciseDao
+import com.workoutdataaggregator.server.persistence.daos.ExerciseSetDao
 import com.workoutdataaggregator.server.persistence.models.ExerciseModel
+import com.workoutdataaggregator.server.utils.Either
+import com.workoutdataaggregator.server.utils.Problems
 import org.litote.kmongo.*
 import java.time.Instant
 import java.util.*
@@ -20,7 +23,8 @@ class ExerciseRepository : IRepository, BaseRepository<ExerciseModel, ExerciseDa
             val existingExercise = collection.find(ExerciseDao::strongId eq exerciseModel.strongId).firstOrNull()
 
             if (existingExercise == null) {
-                collection.insertOne(exerciseModel.toDao())
+                val dao = exerciseModel.toDao()
+                collection.insertOne(dao)
                 return@forEach
             }
 
@@ -35,6 +39,16 @@ class ExerciseRepository : IRepository, BaseRepository<ExerciseModel, ExerciseDa
 
     fun getLastUpdateTime(): Instant =
         collection.find().descendingSort(ExerciseDao::createdAt).limit(1).firstOrNull()?.createdAt ?: beginningOfTime
+
+    fun findWithinDates(startDate: Instant, endDate: Instant): Either<Problems.Problem, List<ExerciseModel>> {
+        // TODO fix this query - currently returning too much data
+        val query = and(
+            ExerciseDao::sets / ExerciseSetDao::executedAt gt startDate,
+            ExerciseDao::sets / ExerciseSetDao::executedAt lt endDate
+        )
+        val result = collection.find(query).toList().map { it.toModel() }
+        return Either.Value(result)
+    }
 
     companion object {
         const val DB_NAME = "exercises"

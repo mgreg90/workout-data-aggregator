@@ -3,6 +3,7 @@ package com.workoutdataaggregator.server.rest.dtos
 import com.workoutdataaggregator.server.utils.Either
 import com.workoutdataaggregator.server.utils.Problems
 import io.javalin.http.Context
+import org.slf4j.LoggerFactory
 import org.valiktor.ConstraintViolationException
 import org.valiktor.Validator
 import org.valiktor.i18n.toMessage
@@ -33,6 +34,8 @@ interface IRawDto {
 interface IDtoParser
 
 abstract class DtoParserBase : IDtoParser {
+    val logger = LoggerFactory.getLogger(javaClass)
+
     inline fun <TDto : IDto, reified TRawDto : IRawDto> _parse(ctx : Context, factory : (TRawDto) -> TDto) : Either<Problems.Problem, TDto> {
         val rawDto : IRawDto?
         try {
@@ -40,8 +43,10 @@ abstract class DtoParserBase : IDtoParser {
         } catch (e : Exception) {
             return if (e.message?.startsWith("Couldn't deserialize") == true) {
                 val message = "Unable to parse request body"
+                logger.error("Failed to parse Request body - ${ctx.body()}")
                 Either.Problem(Problems.VALIDATION_ERROR(message))
             } else {
+                logger.error("Unhandled Exception! - ${e.javaClass}: ${e.message}")
                 Either.Problem(Problems.INTERNAL_SERVER_ERROR())
             }
         }

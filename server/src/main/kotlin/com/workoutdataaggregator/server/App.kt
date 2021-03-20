@@ -25,6 +25,7 @@ class App {
         app = Javalin.create()
 
         registerRoutes()
+        configureJavalin()
         startServer()
     }
 
@@ -43,6 +44,12 @@ class App {
     private fun registerRoutes() {
         logger.info("Registering Routes... ")
         controllers.registerRoutes(app)
+        logger.info("Registering Routes Complete!")
+    }
+
+    private fun configureJavalin() {
+        logger.info("Registering Routes... ")
+        Config.init()
         logger.info("Registering Routes Complete!")
     }
 

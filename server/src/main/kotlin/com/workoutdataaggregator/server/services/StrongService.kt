@@ -38,11 +38,6 @@ class StrongService(
 
         exerciseRepository.createOrUpdateMany(exercises)
 
-
-        // TODO use client (maybe just call fetchWorkouts) to get data ✅
-        // Wrap in logic to prevent overcalling (maybe simple local cache) ✅
-        // Call repository to write to database
-        // Handle Errors with `Either` tuple
         return Either.Value(true)
     }
 

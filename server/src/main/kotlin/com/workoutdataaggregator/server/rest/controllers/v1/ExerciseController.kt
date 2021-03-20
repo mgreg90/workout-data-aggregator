@@ -23,13 +23,12 @@ class ExerciseController(private val exerciseService : ExerciseService) : BaseCo
                     validationResult.problem.renderJson(ctx)
                     return@controllerAction
                 }
-                is Either.Value -> validationResult.value as ExerciseReadDto
+                is Either.Value -> validationResult.value
             }
 
             when (val result = exerciseService.findWithinDates(exerciseReadDto.startDate, exerciseReadDto.endDate)) {
-                // TODO Address other TODOs and keep going
-//                is Either.Problem -> creationResult.problem.renderJson(ctx)
-//                is Either.Value -> ctx.json(result.value)
+                is Either.Problem -> result.problem.renderJson(ctx)
+                is Either.Value -> ctx.json(result.value)
             }
         }
     }

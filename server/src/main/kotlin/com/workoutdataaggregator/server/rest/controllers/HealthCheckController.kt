@@ -1,5 +1,8 @@
 package com.workoutdataaggregator.server.rest.controllers
 
+import com.workoutdataaggregator.server.clients.responsedtos.HealthCheckFieldStatus
+import com.workoutdataaggregator.server.clients.responsedtos.HealthCheckResponseDto
+import com.workoutdataaggregator.server.persistence.MongoDb
 import io.javalin.Javalin
 import io.javalin.apibuilder.ApiBuilder.get
 import io.javalin.apibuilder.ApiBuilder.path
@@ -13,6 +16,13 @@ class HealthCheckController: IController {
     }
 
     private fun read(ctx: Context) {
-        ctx.result("Ok!")
+        val response = HealthCheckResponseDto(
+            serverStatus = HealthCheckFieldStatus.Active,
+            databaseStatus = databaseStatus()
+        )
+        ctx.json(response)
     }
+
+    private fun databaseStatus() =
+        if (MongoDb.isLive()) HealthCheckFieldStatus.Active else HealthCheckFieldStatus.Inactive
 }

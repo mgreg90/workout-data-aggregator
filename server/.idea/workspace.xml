@@ -5,33 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a672bc08-8396-4911-8a12-cbf23aeb7422" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/ExerciseDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/ExerciseSetDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/ExerciseModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/ExerciseSetModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/ExerciseRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/Config.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/EnvVars.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/EnvVars.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/Exceptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/Exceptions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/StrongClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/StrongClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/requestdtos/StrongLoginRequestBodyDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/requestdtos/StrongLoginRequestBodyDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/responsedtos/StrongFetchWorkoutsResponseBodyDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/clients/responsedtos/StrongFetchWorkoutsResponseBodyDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/BaseDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/BaseDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/IDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/daos/IDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/BaseModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/BaseModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/IModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/IModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/PersonModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/models/PersonModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/BaseRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/BaseRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/Repositories.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/Repositories.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/Routes.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/Controllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/Controllers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/StrongWorkoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/StrongWorkoutController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/PersonService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/PersonService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/MongoDb.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/MongoDb.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/ExerciseRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/persistence/repositories/ExerciseRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/ExerciseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/controllers/v1/ExerciseController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/BaseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/BaseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/ExerciseReadDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/rest/dtos/ExerciseReadDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/ExerciseService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/ExerciseService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/Services.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/Services.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/StrongService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/services/StrongService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/Problem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/workoutdataaggregator/server/utils/Problem.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

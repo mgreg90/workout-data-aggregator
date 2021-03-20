@@ -11,7 +11,7 @@ class Services(private val clients: Clients, private val repositories: Repositor
     fun init(): Services {
         strongService = StrongService(clients.strongClient, repositories.exerciseRepository)
         personService = PersonService(repositories.personRepository)
-        exerciseService = ExerciseService()
+        exerciseService = ExerciseService(repositories.exerciseRepository)
         return this
     }
 }
